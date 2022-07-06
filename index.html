@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./app.js" defer></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"
+        defer></script>
+    <title>Currency Converter</title>
+</head>
+
+<body class="bg-primary text-light">
+    <h1 class="py-3 bg-dark text-center text-warning display-3 fw-bold ">Currency Converter</h1>
+    <div class="container mt-5 ">
+        <main>
+            <label for="cur1" class="me-5 mb-4 display-6 ">Choose Your First Currency:</label>
+            <select name="cur1" id="cur1" class="mb-4 form-select">
+            </select>
+            <br>
+            <label for="cur2" class="me-4 mb-4 display-6">Choose Your Second Currency:</label>
+            <select name="cur2" id="cur2" class="mb-4 form-select">
+            </select>
+            <br>
+            <button id="submit" type="submit" class="mb-4 btn btn-dark">Find Rate</button>
+            <div id="showRate"></div>
+        </main>
+    </div>
+
+</body>
+
+</html>
