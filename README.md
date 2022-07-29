@@ -1,5 +1,5 @@
-# currency-converter
+# Currency Converter
 
-currency-converter using html,JS
+**Currency Converter** app I have created using `Html` , `Bootstrap` and `Javascript`.
 
-You can see [live demo](https://rutvikmendpara.github.io/currency-converter/ "Currency Converter") here.
+You can checkout _live demo_ [here](https://rutvikmendpara.github.io/currency-converter/ "Currency Converter") .
