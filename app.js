@@ -2,6 +2,7 @@ const cur1 = document.getElementById("cur1");
 const cur2 = document.getElementById("cur2");
 const submit = document.getElementById("submit");
 const showRate = document.getElementById("showRate");
+const swapVal = document.getElementById("swapVal");
 
 // show currency
 const AddCurrency = () => {
@@ -20,7 +21,6 @@ const AddCurrency = () => {
       option2.setAttribute("value", `${x.code}`);
       cur1.appendChild(option1);
       cur2.appendChild(option2);
-      // console.log(x);
     }
 
     return curlist;
@@ -44,8 +44,6 @@ submit.addEventListener("click", (e) => {
   const curTo = document.createElement("div");
   const curRate = document.createElement("div");
   clearScreen(curFrom, curTo, curRate);
-
-  // append elements
   showRate.appendChild(showCountry);
   showRate.appendChild(curFrom);
   showRate.appendChild(curTo);
@@ -56,12 +54,13 @@ submit.addEventListener("click", (e) => {
       `https://api.exchangerate.host/convert?from=${cur1.value}&to=${cur2.value}`
     );
     const data = await response.json();
-    showCountry.classList.add("h1");
+    showCountry.classList.add("display-5");
     showCountry.classList.add("text-warning");
-    showCountry.innerHTML = `Rate of ${JSON.stringify(
-      data.query.from
-    )} to ${JSON.stringify(data.query.to)} is ${JSON.stringify(data.result)}`;
-
+    showCountry.innerHTML = `Rate of ${
+      JSON.stringify(data.query.from).split('"')[1]
+    } to ${JSON.stringify(data.query.to).split('"')[1]} is ${JSON.stringify(
+      data.result
+    )}`;
     return data;
   }
   getData()
@@ -72,3 +71,14 @@ submit.addEventListener("click", (e) => {
 // load
 
 AddCurrency();
+
+function SwapTheValue() {
+  let temp;
+  temp = cur1.value;
+  cur1.value = cur2.value;
+  cur2.value = temp;
+}
+
+swapVal.addEventListener("click", () => {
+  SwapTheValue();
+});
